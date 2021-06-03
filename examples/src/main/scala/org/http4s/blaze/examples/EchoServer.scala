@@ -48,6 +48,7 @@ class EchoServer {
 
   def run(port: Int): Unit = {
     val address = new InetSocketAddress(port)
+    logger.info(s"Prepare server on address $address at time ${new Date}")
     val channel = prepare(address)
 
     logger.info(s"Starting server on address $address at time ${new Date}")
@@ -74,9 +75,9 @@ class EchoServer {
   }
 }
 
-object EchoServer {
-  def main(args: Array[String]): Unit = new EchoServer().run(8080)
-}
+//object EchoServer {
+//  def main(args: Array[String]): Unit = new EchoServer().run(8080)
+//}
 
 object EchoServerApp extends App {
   new EchoServer().run(8080)
